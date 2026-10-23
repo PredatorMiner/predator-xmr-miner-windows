@@ -13,8 +13,6 @@
 ![Compiler](https://img.shields.io/badge/built%20with-clang--cl%2020.1.8-262D3A?logo=llvm&logoColor=white)
 ![Language](https://img.shields.io/badge/language-C%2B%2B%20%2B%20MASM-00599C?logo=cplusplus&logoColor=white)
 [![Release](https://img.shields.io/github/v/release/PredatorMiner/predator-xmr-miner-windows?include_prereleases&display_name=tag&label=release)](https://github.com/PredatorMiner/predator-xmr-miner-windows/releases/latest)
-![Downloads](https://img.shields.io/github/downloads/PredatorMiner/predator-xmr-miner-windows/total)
-![Stars](https://img.shields.io/github/stars/PredatorMiner/predator-xmr-miner-windows?style=flat)
 
 Predator is an open-source RandomX miner written from scratch for one coin and one platform. It mines **1-1.5% faster than XMRig** on the same hardware, thread count and settings, in a single executable with no installer, no config files and no CRT dependency.
 
