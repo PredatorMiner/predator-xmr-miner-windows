@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{b71b25bd-0bc4-4a8d-a496-46ce90ccb6e7}</ProjectGuid>
+    <RootNamespace>MoneroMiner</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.28000.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+    <MSVCPreviewEnabled>true</MSVCPreviewEnabled>
+    <EnableUnitySupport>true</EnableUnitySupport>
+    <LLVMToolsVersion>22</LLVMToolsVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>Predator</TargetName>
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <ManagedAssembly>false</ManagedAssembly>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <LanguageStandard_C>stdclatest</LanguageStandard_C>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableEnhancedInstructionSet>AdvancedVectorExtensions2</EnableEnhancedInstructionSet>
+      <StringPooling>true</StringPooling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <ExceptionHandling>false</ExceptionHandling>
+      <AdditionalOptions>-O3 -march=native -maes -madx -flto=full -g0 -fstrict-aliasing -fno-semantic-interposition -fno-math-errno -fno-delete-null-pointer-checks -fno-trapping-math -fno-signed-zeros -ffinite-loops -ffp-contract=fast -faddrsig -fmerge-all-constants -fno-stack-protector -fno-exceptions -fno-rtti -fno-threadsafe-statics -fomit-frame-pointer -fno-unwind-tables -fno-asynchronous-unwind-tables -fvisibility=hidden -fvisibility-inlines-hidden -fdata-sections -ffunction-sections -fno-common -funroll-loops -fpeel-loops -floop-unroll-and-jam -fvectorize -fslp-vectorize -falign-functions=64 -falign-loops=64 -falign-jumps=64 -mllvm -unroll-threshold=400 -mllvm -unroll-allow-partial -mllvm -unroll-allow-remainder -mllvm -unroll-partial-threshold=150 -mllvm -inline-threshold=2000 -mllvm -inlinehint-threshold=3000 -mllvm -slp-max-reg-size=256 -mllvm -slp-vectorize-hor -mllvm -vectorize-loops -mllvm -hot-cold-split=true -mllvm -enable-gvn-hoist=true -mllvm -enable-gvn-sink=true -mllvm -enable-loopinterchange -mllvm -enable-loop-distribute=true -mllvm -enable-loop-flatten=true -mllvm -enable-chr=true -mllvm -enable-unroll-and-jam -mllvm -enable-interleaved-mem-accesses -mllvm -enable-masked-interleaved-mem-accesses -mllvm -force-vector-interleave=2 %(AdditionalOptions)</AdditionalOptions>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <ControlFlowGuard>false</ControlFlowGuard>
+      <CallingConvention>FastCall</CallingConvention>
+      <GuardEHContMetadata>false</GuardEHContMetadata>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <GenerateManifest>false</GenerateManifest>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <AdditionalDependencies>kernel32.lib;ws2_32.lib;Advapi32.lib;psapi.lib;ntdll.lib;Synchronization.lib</AdditionalDependencies>
+      <AdditionalOptions>/ENTRY:mainCRTStartup /OPT:ICF=10 /OPT:REF %(AdditionalOptions)</AdditionalOptions>
+      <UACExecutionLevel>AsInvoker</UACExecutionLevel>
+      <TargetMachine>MachineX64</TargetMachine>
+      <TerminalServerAware>
+      </TerminalServerAware>
+    </Link>
+    <MASM>
+      <EnableMASM51Compatibility>false</EnableMASM51Compatibility>
+      <UseSafeExceptionHandlers>false</UseSafeExceptionHandlers>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GeneratePreprocessedSourceListing>false</GeneratePreprocessedSourceListing>
+      <DisableSymbolTable>true</DisableSymbolTable>
+      <ErrorReporting>3</ErrorReporting>
+    </MASM>
+    <Manifest>
+      <VerboseOutput>false</VerboseOutput>
+      <EnableSegmentHeap>true</EnableSegmentHeap>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="randomx.asm" />
+    <MASM Include="runtime_stubs.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="randomx_core.hpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>
